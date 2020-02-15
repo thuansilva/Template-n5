@@ -1,4 +1,4 @@
-# Template-Oficial 
+# N5-Template
 
 <!--
 *** Obrigado por estar vendo este README. 
@@ -76,7 +76,7 @@ Antes de seguirmos para as configurações e uso do template, é ideal que você
 A estrutura de arquivos no NPM é está da seguinte maneira:
 
 ```bash
-template-n5
+n5-template
 ├── src/
 │   ├── config/
 │   │   └── ReactotronConfig.js
@@ -87,14 +87,12 @@ template-n5
 │   │   └── api.js
 │   ├── index.js
 │   └── routes.js
-├── .editorconfig
 ├── .eslintrc.json
 ├── .gitignore
 ├── babel.config.js
 ├── dependencies.json
 ├── devDependencies.json
 ├── index.js
-├── jsconfig.js
 ├── LICENSE
 ├── package.json
 └── README.md
