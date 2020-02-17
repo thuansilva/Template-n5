@@ -9,8 +9,8 @@
 
 <!-- PROJECT SHIELDS -->
 
-![npm](https://img.shields.io/npm/v/react-native-template-n5-template?style=for-the-badge)
-[![npm](https://img.shields.io/npm/dt/react-native-template-n5-template?style=for-the-badge)]()
+[![npm](https://img.shields.io/npm/v/react-native-template-n5-template?style=for-the-badge)](https://www.npmjs.com/package/react-native-template-n5-template)
+[![npm](https://img.shields.io/npm/dt/react-native-template-n5-template?style=for-the-badge)](https://www.npmjs.com/package/react-native-template-n5-template)
 [![GitHub issues](https://img.shields.io/github/issues/thuansilva/Template-n5?color=red&style=for-the-badge)](https://github.com/thuansilva/Template-Oficial/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/thuansilva/Template-n5?color=yellow&style=for-the-badge)](https://github.com/thuansilva/Template-n5/commits/master)
 [![NPM](https://img.shields.io/github/license/thuansilva/Template-n5?logoColor=blue&style=for-the-badge)](https://choosealicense.com/licenses/mit)
@@ -112,10 +112,10 @@ react-native init nomedoProjeto --template n5-template
 Com isso o projeto será criado com todas as dependências do template devidamente instaladas e linkadas, tal como os arquivos de configuração que são copiados para o projeto.
 
 ---
-#### Passo adicional no Android
-No React Navigation, a partir da  versão do React Native 0.60 e superior, a [vinculação é automática](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md). Então você só precisa rodar o `react-native link`.
+#### Passos adicionais no Android
+- No React Navigation, a partir da  versão do React Native 0.60 e superior, a [vinculação é automática](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md). Então você só precisa rodar o `react-native link`.
 
-Para que os gestos sejam habilitados no Android é necessário um passo a mais, abra o arquivo `android/app/src/main/java/<pacote_do_projeto>/MainActivity.java`, e importe os pacotes abaixo:
+- Para que os gestos sejam habilitados no Android é necessário um passo a mais, abra o arquivo `android/app/src/main/java/<pacote_do_projeto>/MainActivity.java`, e importe os pacotes abaixo:
 
 ```java
 // ...
