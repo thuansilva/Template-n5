@@ -1,10 +1,12 @@
 {
   "name": "react-native-template-n5-template",
-  "version": "1.0.3",
-  "repository" : {
-    "type" : " git " ,
-    "url"  : "https://github.com/thuansilva/Template-n5"
+  "version": "1.1.1",
+  "description": "Template para auxiliar na construção de projetos em React-native",
+  "repository": {
+    "type": " git ",
+    "url": "https://github.com/thuansilva/Template-n5"
   },
-  "license" : "MIT" 
-
+  "homepage": "https://github.com/thuansilva/Template-n5#readme",
+  "author": "Thuan Matheus <https://github.com/thuansilva>",
+  "license": "MIT"
 }

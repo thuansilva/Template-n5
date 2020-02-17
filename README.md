@@ -3,13 +3,12 @@
 <!--
 *** Obrigado por estar vendo este README. 
 *** Toda sugestão será muito bem-vinda.
-*** Request ou abra uma Issue com a tag "sugestão".
 *** Readme basedo no template da Rocktseat [https://github.com/Rocketseat/react-native-template-rocketseat-basic]
 -->
 
 <!-- PROJECT SHIELDS -->
 
-[![npm](https://img.shields.io/npm/v/react-native-template-n5-template?style=for-the-badge)](https://www.npmjs.com/package/react-native-template-n5-template)
+[![npm package](https://img.shields.io/npm/v/react-native-template-n5-template?label=npm%20package&style=for-the-badge)](https://www.npmjs.com/package/react-native-template-n5-template)
 [![npm](https://img.shields.io/npm/dt/react-native-template-n5-template?style=for-the-badge)](https://www.npmjs.com/package/react-native-template-n5-template)
 [![GitHub issues](https://img.shields.io/github/issues/thuansilva/Template-n5?color=red&style=for-the-badge)](https://github.com/thuansilva/Template-Oficial/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/thuansilva/Template-n5?color=yellow&style=for-the-badge)](https://github.com/thuansilva/Template-n5/commits/master)
@@ -25,7 +24,7 @@
   - [Pré-requisitos](#pr%C3%A9-requisitos)
   - [Estrutura de Arquivos](#estrutura-de-arquivos)
   - [Instalação](#instala%C3%A7%C3%A3o)
-    - [Passo Adicional no Android](#passo-adicional-no-Android)
+    - [Passos adicionais no Android](#passos-adicionais-no-Android)
     - [Passo Adicional no IOS](#passo-adicional-no-IOS)
 - [Contribuição](#contribui%C3%A7%C3%A3o)
 - [Licença](#licen%C3%A7a)
@@ -79,8 +78,6 @@ A estrutura de arquivos no NPM é está da seguinte maneira:
 ```bash
 n5-template
 ├── src/
-│   ├── config/
-│   │   └── ReactotronConfig.js
 │   ├── pages/
 │   │   └── Main/
 │   │       └── index.js
@@ -94,6 +91,7 @@ n5-template
 ├── dependencies.json
 ├── devDependencies.json
 ├── index.js
+├── jsconfig.json
 ├── LICENSE
 ├── package.json
 └── README.md
