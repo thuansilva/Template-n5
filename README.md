@@ -25,7 +25,8 @@
   - [Pré-requisitos](#pr%C3%A9-requisitos)
   - [Estrutura de Arquivos](#estrutura-de-arquivos)
   - [Instalação](#instala%C3%A7%C3%A3o)
-    - [Passo Adicional no Android && IOS](#passo-adicional-no-android-&&-ios)
+    - [Passo Adicional no Android](#passo-adicional-no-Android)
+    - [Passo Adicional no IOS](#passo-adicional-no-IOS)
 - [Contribuição](#contribui%C3%A7%C3%A3o)
 - [Licença](#licen%C3%A7a)
 - [Contato](#contato)
@@ -111,12 +112,42 @@ react-native init nomedoProjeto --template n5-template
 Com isso o projeto será criado com todas as dependências do template devidamente instaladas e linkadas, tal como os arquivos de configuração que são copiados para o projeto.
 
 ---
+#### Passo adicional no Android
+No React Navigation, a partir da  versão do React Native 0.60 e superior, a [vinculação é automática](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md). Então você só precisa rodar o `react-native link`.
 
-#### Passo Adicional no Android && IOS
+Para que os gestos sejam habilitados no Android é necessário um passo a mais, abra o arquivo `android/app/src/main/java/<pacote_do_projeto>/MainActivity.java`, e importe os pacotes abaixo:
 
-A partir do React Native 0.60 e superior, a [vinculação é automática](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md). Então você não precisa rodar `react-native link`.
+```java
+// ...
+import com.facebook.react.ReactActivity;
+// Importações adicionadas
+import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactRootView;
+import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
+```
 
-Se você estiver em um Mac e desenvolvendo para iOS, precisará instalar pods para concluir a vinculação. Verifique se você possui os [Cocoapods](https://cocoapods.org/) instalados. Então execute:
+Com a importação realizada é necesário criar um novo método abaixo do `getMainComponentName()`, ficando:
+
+```java
+public class MainActivity extends ReactActivity {
+  @Override
+  protected String getMainComponentName() { ... }
+  // Método adicionado
+  @Override
+  protected ReactActivityDelegate createReactActivityDelegate() {
+    return new ReactActivityDelegate(this, getMainComponentName()) {
+      @Override
+      protected ReactRootView createRootView() {
+        return new RNGestureHandlerEnabledRootView(MainActivity.this);
+      }
+    };
+  }
+}
+```
+---
+#### Passo adicional no IOS
+
+Se você estiver em um Mac e desenvolvendo para iOS, precisará instalar pods para concluir a vinculação. Verifique se você possui o [Cocoapods](https://cocoapods.org/) instalado. Então execute:
 
 ```sh
 cd ios; pod install; cd ..
