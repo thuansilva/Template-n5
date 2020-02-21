@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-import Main from '~/pages/Main';
+import Main from '-/pages/Main';
 function Routes() {
   return (
     <Stack.Navigator

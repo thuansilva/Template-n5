@@ -6,7 +6,6 @@
       },
       "extends": [
           "plugin:react/recommended",
-          "plugin:react-native/all",
           "airbnb"
       ],
       "globals": {
@@ -22,9 +21,7 @@
       },
       "plugins": [
           "react",
-          "jsx-a11y",
-          "eslint-plugin-import-helpers", 
-          "import"
+          "eslint-plugin-import-helpers"
       ],
       "rules": {
           "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -35,8 +32,8 @@
               "groups": [
                 "/^react/",
                 "module",
-                "/^@shared/",
-                "/~/",
+                "/^@/",
+                "/-/",
                 ["parent", "sibling", "index"]
               ],
               "alphabetize": { "order": "asc", "ignoreCase": true }
@@ -92,5 +89,13 @@
         "linebreak-style":"off",
         "react/prop-types": [0, { "ignore": 0}],
         "react/destructuring-assignment": 0
-        }
+        },
+        "settings": {
+            "import/resolver": {
+              "babel-plugin-root-import": {
+                "rootPathPrefix": "-/",
+                "rootPathSuffix": "src"
+              }
+            }
+          }
   }
