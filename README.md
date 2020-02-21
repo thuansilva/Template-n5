@@ -111,37 +111,23 @@ Com isso o projeto será criado com todas as dependências do template devidamen
 
 ---
 #### Passos adicionais no Android
-- No React Navigation, a partir da  versão do React Native 0.60 e superior, a [vinculação é automática](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md). Então você só precisa rodar o `react-native link`.
+- No React Navigation, a partir da  versão do React Native 0.60 e superior, a [vinculação é automática](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md). Então você **não precisa rodar o** `react-native link`.
 
-- Para que os gestos sejam habilitados no Android é necessário um passo a mais, abra o arquivo `android/app/src/main/java/<pacote_do_projeto>/MainActivity.java`, e importe os pacotes abaixo:
-
-```java
-// ...
-import com.facebook.react.ReactActivity;
-// Importações adicionadas
-import com.facebook.react.ReactActivityDelegate;
-import com.facebook.react.ReactRootView;
-import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
-```
-
-Com a importação realizada é necesário criar um novo método abaixo do `getMainComponentName()`, ficando:
+- Para finalizar a instalação do `react-native-screens` para Android, adicione as duas linhas a `dependencies` seguir na seção `android/app/build.gradle`:
 
 ```java
-public class MainActivity extends ReactActivity {
-  @Override
-  protected String getMainComponentName() { ... }
-  // Método adicionado
-  @Override
-  protected ReactActivityDelegate createReactActivityDelegate() {
-    return new ReactActivityDelegate(this, getMainComponentName()) {
-      @Override
-      protected ReactRootView createRootView() {
-        return new RNGestureHandlerEnabledRootView(MainActivity.this);
-      }
-    };
-  }
-}
+implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
 ```
+- Para finalizar a instalação `react-native-gesture-handler`, adicione o seguinte na parte **superior** (verifique se está na parte superior e se não há mais nada antes) do seu arquivo de entrada, como `index.js` ou `App.js`:
+
+```java
+import 'react-native-gesture-handler';
+```
+
+***Nota: Se você pular esta etapa, seu aplicativo poderá falhar na produção, mesmo que funcione bem no desenvolvimento.***
+
+- Agora, precisamos envolver o aplicativo inteiro `NavigationContainer`. Normalmente, você faria isso no seu arquivo de entrada, como `index.js`ou `App.js`.
 ---
 #### Passo adicional no IOS
 
